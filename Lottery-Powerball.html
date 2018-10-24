@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Random Lotto Number Generator</title>
+
+
+<script type='text/javascript'>
+
+  var powerballLotteryRandom;
+
+var powerballRandom;
+
+function genRanPowerballNum(min, max, num) {
+
+  var powerballArray = [];
+
+  for (var i = 0; i < num; i++) {
+
+    var ranNum = Math.random() * (max - min) + min;
+
+    while (powerballArray.indexOf(Math.round(ranNum)) > -1) {
+      ranNum = Math.random() * (max - min) + min;
+
+    }
+
+    powerballArray[i] = Math.round(ranNum);
+
+  }
+
+  return powerballArray;
+
+}
+
+powerballLotteryRandom = genRanPowerballNum(1, 69, 5);
+
+powerballRandom = genRanPowerballNum(1, 26, 1);
+
+
+alert("Your Powerball lottery numbers are " + powerballLotteryRandom + ", and your Powerball number is " + powerballRandom + ".");
+    
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>
